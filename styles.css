@@ -1,0 +1,162 @@
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: linear-gradient(to right, #0044ff, #6932ce); 
+    padding: 20px; 
+    text-align: left; 
+    position: relative;
+}
+
+.header h1 {
+    color: white; 
+    font-weight: bold; 
+    border-radius: 5px; 
+    margin: 0; 
+    font-family: 'Helvetica Neue', 'Segoe UI', Arial; 
+    font-size: 28px; 
+    text-transform: lowercase; 
+}
+
+.user-selector {
+    position: absolute; 
+    top: 20px; 
+    right: 20px; 
+    display: flex; 
+    align-items: center; 
+}
+
+.user-selector input {
+    padding: 8px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px 0 0 5px; 
+    height: 35px; 
+    font-size: 14px; 
+}
+
+.user-selector button {
+    padding: 8px 15px; 
+    background: linear-gradient(to right, #007bff, #6f42c1); 
+    color: white;
+    border: 1px solid #ccc; 
+    border-radius: 0 5px 5px 0; 
+    cursor: pointer;
+    height: 35px; 
+    font-size: 14px; 
+}
+
+.user-selector button:hover {
+    background: linear-gradient(to right, #0056b3, #5a29a6); 
+}
+
+.container {
+    display: flex; 
+    flex: 1; 
+}
+
+.left-panel {
+    flex: 2; 
+    padding: 20px;
+    background-color: white;
+    border-right: 2px solid #ccc; 
+    height: 100%; 
+}
+
+.right-panel {
+    flex: 1; 
+    padding: 20px;
+    background-color: #f9f9f9;
+    height: 100%; 
+}
+
+input[type="text"],
+textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #5cb85c;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+#posts-container {
+    margin-top: 20px;
+    max-height: 500px; 
+    overflow-y: auto; 
+    border: 3px solid #ccc; 
+    border-radius: 5px; 
+    padding: 10px; 
+    height: calc(100% - 50px); 
+}
+
+.post {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+
+.post strong {
+    color: #007bff;
+}
+
+.post small {
+    color: #888; 
+    display: block; 
+    margin-top: 5px; 
+    font-size: 0.9em; 
+}
+
+#featured-posts {
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #ffffff; 
+    height: 100%; 
+}
+
+.like-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px 10px; 
+}
+
+.like-button:hover:enabled {
+    background-color: #0056b3; 
+}
+
+.like-count {
+    margin-right: 10px; 
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechonbook</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <div class="header">
+        <h1>mechonbook</h1>
+    </div>
+    <div class="container">
+        <form method="POST" action="{% url 'post_create' %}">
+            {% csrf_token %}
+            <input type="text" name="author" placeholder="Ingrese su nombre" required>
+            <textarea name="content" placeholder="Escribe tu publicación aquí..." required></textarea>
+            <button type="submit">Publicar</button>
+        </form>
+        <div id="posts-container">
+            {% for post in posts %}
+                <div class="post">
+                    <strong>{{ post.author }}</strong>
+                    <small>{{ post.timestamp }}</small>
+                    <p>{{ post.content }}</p>
+                    <span>{{ post.likes }} Likes</span>
+                    <button onclick="likePost({ post,id })">Like</button>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <script>
+        function likePost(postId) {
+            fetch(`/posts/${postId}/like/`, { method: 'POST' })
+                .then(response => location.reload());
+        }
+    </script>
+</body>
+</html>

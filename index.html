@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mechonbook</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>mechonbook</h1>
+        <div class="user-selector">
+            <input type="text" id="username" placeholder="Ingrese su nombre">
+            <button id="confirm-username">Confirmar</button>
+        </div>
+    </div>
+    <div class="container">
+        <div class="left-panel">
+            <textarea id="post-content" placeholder="Escribe tu publicación aquí..."></textarea>
+            <button id="post-button">Publicar</button>
+            <div id="posts-container"></div>
+        </div>
+        <div class="right-panel">
+            <h2>Publicaciones más relevantes</h2>
+            <div id="featured-posts"></div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- python manage.py makemigrations -->
+<!-- python manage.py migrate -->
+<!-- python manage.py runserver -->
+<!-- Abre tu navegador y visita http://127.0.0.1:8000/ para ver tu foro en funcionamiento. -->
